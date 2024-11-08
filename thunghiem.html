@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lời tỏ tình</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            overflow: hidden;
+            text-align: center;
+        }
+        .content {
+            opacity: 0;
+            animation: fadeIn 3s ease-in-out forwards;
+        }
+        .line {
+            opacity: 0;
+            transition: opacity 1s;
+        }
+        .line img {
+            width: 150px;
+            height: auto;
+            margin: 10px 0;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .heart {
+            display: inline-block;
+            position: relative;
+            width: 100px;
+            height: 90px;
+        }
+        .heart::before,
+        .heart::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 100px;
+            height: 150px;
+            border-radius: 50px 50px 0 0;
+            background: red;
+        }
+        .heart::before {
+            left: 100px;
+            transform: rotate(-45deg);
+            transform-origin: 0 100%;
+        }
+        .heart::after {
+            left: 0;
+            transform: rotate(45deg);
+            transform-origin: 100% 100%;
+        }
+        @keyframes pulse {
+            0% { transform: scale(0.95); }
+            70% { transform: scale(1.1); }
+            100% { transform: scale(0.95); }
+        }
+        .pulse {
+            animation: pulse 1s infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1 class="line">Gửi đến người con gái tôi thương...</h1>
+        <p class="line">Cậu à, tớ có điều muốn nói với cậu...</p>
+        <p class="line">Trước khi gặp cậu, tớ có nhiều thời gian rảnh rỗi lắm...</p>
+        <p class="line">Nhưng từ sau khi gặp cậu, những khoảng thời gian đó không còn nữa...</p>
+        <p class="line">Nó bị lấp đầy bởi nỗi nhớ, tương tư, và những nghĩ suy về cậu...</p>
+        <p class="line">Có lẽ tớ thích cậu thật rồi...</p>
+        <p class="line">Mỗi ngày, mỗi khoảnh khắc tớ đều nghĩ đến cậu...</p>
+        <p class="line">Cậu là người khiến trái tim tớ rung động...</p>
+        <p class="line"><img src="path/to/your/image1.jpg" alt="Image 1"></p> <!-- Thay thế bằng đường dẫn đến hình ảnh của bạn -->
+        <p class="line">Dù không biết phải làm sao, tớ vẫn muốn nói ra...</p>
+        <p class="line pulse">"TỚ YÊU CẬU" 💖</p>
+        <p class="line">Tớ biết mình không hoàn hảo...</p>
+        <p class="line">Nhưng tình cảm này là chân thành...</p>
+        <p class="line">Tớ hy vọng cậu sẽ hiểu và chấp nhận tấm lòng của tớ...</p>
+        <p class="line">Hãy cho tớ một cơ hội để được bên cậu...</p>
+        <p class="line">Được cùng cậu chia sẻ niềm vui và nỗi buồn...</p>
+        <p class="line">Tớ luôn ở đây, chờ đợi và hy vọng...</p>
+        <p class="line">Một ngày nào đó, chúng ta sẽ cùng nhau tạo nên những kỷ niệm đẹp...</p>
+        <p class="line">Tớ yêu cậu rất nhiều...</p>
+        <div class="heart"></div>
+        <div class="heart pulse"></div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const lines = document.querySelectorAll('.line');
+            lines.forEach((line, index) => {
+                setTimeout(() => {
+                    if (index > 0) {
+                        lines[index - 1].style.opacity = '0';
+                    }
+                    line.style.opacity = '1';
+                }, index * 5000); // Thời gian ngắt quãng 5 giây giữa mỗi câu
+            });
+        });
+    </script>
+</body>
+</html>
